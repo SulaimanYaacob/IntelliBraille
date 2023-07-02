@@ -1,6 +1,19 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import AppLayout from "@/components/AppLayout";
+import { MantineProvider } from "@mantine/core";
+import type { AppProps } from "next/app";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <AppLayout>
+      <Head>
+        <title>Braille Converter</title>
+        <link rel="icon" href="/favicon.png"></link>
+        <meta name="description" content="Convert text to braille and back" />
+      </Head>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Component {...pageProps} />
+      </MantineProvider>
+    </AppLayout>
+  );
 }
