@@ -1,18 +1,54 @@
-import AppLayout from "@/components/AppLayout";
-import { Braille } from "@/types/braille";
-import { Button, Center, Text } from "@mantine/core";
-const braille = require("braille") as Braille;
+import {
+  ActionIcon,
+  Button,
+  Center,
+  Divider,
+  Grid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { FileUp, Languages } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 function index() {
-  const brailleText = braille.toBraille(
-    "Fugiat ut eu eu ex reprehenderit consectetur. "
-  );
-
-  const text = braille.toText(brailleText);
   return (
     <Center>
-      <Text>{text}</Text>
+      <Stack spacing="xl">
+        <Title align="center" ff="cursive">
+          Convert To Braille
+        </Title>
+        <Divider />
+        <Grid justify="space-around">
+          <Grid.Col span={6}>
+            <ActionIcon
+              c="blue"
+              size="250px"
+              component={Link}
+              href="/convert-text"
+            >
+              <Stack align="center">
+                <Languages size="10rem" />
+                <Title order={2}> Text</Title>
+              </Stack>
+            </ActionIcon>
+          </Grid.Col>
+          <Grid.Col span={6}>
+            <ActionIcon
+              c="red"
+              size="250px"
+              component={Link}
+              href="/convert-file"
+            >
+              <Stack align="center">
+                <FileUp size="10rem" />
+                <Title order={2}> File</Title>
+              </Stack>
+            </ActionIcon>
+          </Grid.Col>
+        </Grid>
+      </Stack>
     </Center>
   );
 }
