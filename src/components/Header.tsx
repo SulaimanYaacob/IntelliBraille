@@ -45,7 +45,7 @@ function LandingHeader() {
   }
 
   return (
-    <Header height={{ base: 60, md: 70 }} p="md">
+    <Header height={{ base: 70, md: 70 }} p="md">
       <Center maw="600px" m="auto" sx={{ justifyContent: "space-between" }}>
         <Group>
           <Image src="/favicon.png" width={40} height={40} alt="" />
