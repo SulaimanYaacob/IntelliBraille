@@ -9,7 +9,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
       padding={0}
       px="md"
       m="auto"
-      w="600px"
+      maw="600px"
       layout="alt"
       header={<Header />}
     >
