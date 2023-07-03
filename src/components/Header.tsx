@@ -16,7 +16,7 @@ function LandingHeader() {
           {matches && (
             <Group>
               <Image src="/favicon.png" width={40} height={40} alt="" />
-              <Title c="blue.3" ff="cursive" align="center" order={2}>
+              <Title c="blue.3" ff="sans-serif" align="center" order={2}>
                 IntelliBraille
               </Title>
             </Group>
@@ -49,7 +49,7 @@ function LandingHeader() {
       <Center maw="600px" m="auto" sx={{ justifyContent: "space-between" }}>
         <Group>
           <Image src="/favicon.png" width={40} height={40} alt="" />
-          <Title c="blue.3" ff="cursive" align="center" order={2}>
+          <Title c="blue.3" ff="sans-serif" align="center" order={2}>
             IntelliBraille
           </Title>
         </Group>

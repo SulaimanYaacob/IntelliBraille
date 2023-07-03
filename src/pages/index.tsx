@@ -7,7 +7,7 @@ function index() {
   return (
     <Center>
       <Stack spacing="xl">
-        <Title align="center" ff="cursive">
+        <Title align="center" ff="sans-serif">
           Convert To Braille
         </Title>
         <Divider p="xl" />

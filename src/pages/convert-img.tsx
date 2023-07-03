@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import BrailleArea from "@/components/BrailleArea";
 import { Upload } from "lucide-react";
 
+//TODO show modal after upload image
 const ImageConvertPage = () => {
   const [imageData, setImageData] = useState<null | string>(null);
   const loadFile = (file: File | null) => {
@@ -69,9 +70,6 @@ const ImageConvertPage = () => {
           accept="image/*"
           multiple={false}
         />
-        {!!imageData && (
-          <Image m="auto" alt="" src={imageData} maw="200px" mah="100px" />
-        )}
 
         <Stack sx={{ flex: 1 }}>
           <Button
