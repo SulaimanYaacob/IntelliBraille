@@ -33,6 +33,7 @@ const FileConvertPage = () => {
           accept="application/pdf"
           onChange={setFile}
           title="Upload File"
+          placeholder="Upload a PDF file to convert to braille"
         />
         <Button
           onClick={() => setPdfText(placeholder)}
