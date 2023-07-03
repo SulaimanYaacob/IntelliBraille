@@ -1,5 +1,5 @@
 import { ActionIcon, Center, Divider, Grid, Stack, Title } from "@mantine/core";
-import { FileUp, Languages } from "lucide-react";
+import { FileUp, Languages, ImageIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -10,7 +10,7 @@ function index() {
         <Title align="center" ff="cursive">
           Convert To Braille
         </Title>
-        <Divider />
+        <Divider p="xl" />
 
         <Grid
           grow
@@ -24,12 +24,12 @@ function index() {
           <Grid.Col span="auto">
             <ActionIcon
               c="blue"
-              size="200px"
+              size="150px"
               component={Link}
               href="/convert-text"
             >
               <Stack align="center">
-                <Languages size="100px" />
+                <Languages size="75px" />
                 <Title order={2}> Text</Title>
               </Stack>
             </ActionIcon>
@@ -37,13 +37,26 @@ function index() {
           <Grid.Col span="auto">
             <ActionIcon
               c="red"
-              size="200px"
+              size="150px"
               component={Link}
               href="/convert-file"
             >
               <Stack align="center">
-                <FileUp size="100px" />
+                <FileUp size="75px" />
                 <Title order={2}> File</Title>
+              </Stack>
+            </ActionIcon>
+          </Grid.Col>
+          <Grid.Col span="auto">
+            <ActionIcon
+              c="teal"
+              size="150px"
+              component={Link}
+              href="/convert-file"
+            >
+              <Stack align="center">
+                <ImageIcon size="75px" />
+                <Title order={2}> Image</Title>
               </Stack>
             </ActionIcon>
           </Grid.Col>

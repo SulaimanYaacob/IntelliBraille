@@ -14,9 +14,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
       layout="alt"
       header={<Header />}
     >
-      <Box py="xl" my="10vh">
-        {children}
-      </Box>
+      <Box my="10vh">{children}</Box>
     </AppShell>
   );
 };

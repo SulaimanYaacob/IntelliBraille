@@ -2,6 +2,7 @@ import BrailleArea from "@/components/BrailleArea";
 import parsePdfData from "@/utils/parsePdfData";
 import { Stack, FileInput, Button } from "@mantine/core";
 import { useEffect, useState } from "react";
+import { Upload } from "lucide-react";
 
 const FileConvertPage = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -30,12 +31,14 @@ const FileConvertPage = () => {
       <BrailleArea textInput={pdfText} />
       <Stack>
         <FileInput
+          icon={<Upload size="16" />}
           accept="application/pdf"
           onChange={setFile}
           title="Upload File"
           placeholder="Upload a PDF file to convert to braille"
         />
         <Button
+          disabled={!placeholder}
           onClick={() => setPdfText(placeholder)}
           variant="outline"
           m="auto"

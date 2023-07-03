@@ -15,7 +15,12 @@ const TextConvertPage = () => {
           placeholder="Input text to convert to braille"
           onChange={(e) => setPlaceholder(e.currentTarget.value)}
         />
-        <Button onClick={() => setText(placeholder)} variant="outline" m="auto">
+        <Button
+          disabled={!placeholder}
+          onClick={() => setText(placeholder)}
+          variant="outline"
+          m="auto"
+        >
           Convert Text
         </Button>
       </Stack>
