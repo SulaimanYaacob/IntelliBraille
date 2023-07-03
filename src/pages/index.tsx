@@ -1,13 +1,4 @@
-import {
-  ActionIcon,
-  Button,
-  Center,
-  Divider,
-  Grid,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
+import { ActionIcon, Center, Divider, Grid, Stack, Title } from "@mantine/core";
 import { FileUp, Languages } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -20,29 +11,38 @@ function index() {
           Convert To Braille
         </Title>
         <Divider />
-        <Grid justify="space-around">
-          <Grid.Col span={6}>
+
+        <Grid
+          grow
+          sx={{
+            ".mantine-av2ldk": {
+              display: "flex",
+              justifyContent: "center",
+            },
+          }}
+        >
+          <Grid.Col span="auto">
             <ActionIcon
               c="blue"
-              size="250px"
+              size="200px"
               component={Link}
               href="/convert-text"
             >
               <Stack align="center">
-                <Languages size="10rem" />
+                <Languages size="100px" />
                 <Title order={2}> Text</Title>
               </Stack>
             </ActionIcon>
           </Grid.Col>
-          <Grid.Col span={6}>
+          <Grid.Col span="auto">
             <ActionIcon
               c="red"
-              size="250px"
+              size="200px"
               component={Link}
               href="/convert-file"
             >
               <Stack align="center">
-                <FileUp size="10rem" />
+                <FileUp size="100px" />
                 <Title order={2}> File</Title>
               </Stack>
             </ActionIcon>

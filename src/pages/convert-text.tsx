@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Braille } from "@/types/braille";
 import { Button, Stack, Textarea } from "@mantine/core";
 import BrailleArea from "@/components/BrailleArea";
-const braille = require("braille") as Braille;
 
 const TextConvertPage = () => {
   const [text, setText] = useState<string>("");

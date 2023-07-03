@@ -5,6 +5,7 @@ import Header from "./Header";
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppShell
+      h="100vh"
       bg="white"
       padding={0}
       px="md"

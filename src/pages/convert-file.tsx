@@ -1,7 +1,7 @@
 import BrailleArea from "@/components/BrailleArea";
+import parsePdfData from "@/utils/parsePdfData";
 import { Stack, FileInput, Button } from "@mantine/core";
 import { useEffect, useState } from "react";
-import { pdfjs } from "react-pdf";
 
 const FileConvertPage = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -15,8 +15,8 @@ const FileConvertPage = () => {
       reader.onload = async () => {
         const pdfData = new Uint8Array(reader.result as ArrayBuffer);
         try {
-          const pdfText = await parsePdfData(pdfData);
-          setPlaceholder(pdfText);
+          const parsedText = await parsePdfData(pdfData);
+          setPlaceholder(parsedText);
         } catch (error) {
           console.error("Error parsing PDF:", error);
         }
@@ -24,21 +24,6 @@ const FileConvertPage = () => {
       reader.readAsArrayBuffer(file);
     }
   }, [file]);
-
-  const parsePdfData = async (pdfData: Uint8Array) => {
-    // Load the PDF data using pdf.js
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-    const pdfDocument = await pdfjs.getDocument({ data: pdfData }).promise;
-
-    let pdfText = "";
-
-    // Get the text of first page in the PDF
-    const pdfPage = await pdfDocument.getPage(1);
-    const pageText = await pdfPage.getTextContent();
-    pdfText += pageText.items.map((item: any) => item.str).join(" ");
-
-    return pdfText;
-  };
 
   return (
     <Stack>
