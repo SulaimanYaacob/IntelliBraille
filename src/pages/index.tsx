@@ -52,7 +52,7 @@ function index() {
               c="teal"
               size="150px"
               component={Link}
-              href="/convert-file"
+              href="/convert-img"
             >
               <Stack align="center">
                 <ImageIcon size="75px" />
