@@ -65,7 +65,7 @@ const ImageConvertPage = () => {
         <FileInput
           icon={<Upload size="16" />}
           title="Upload Image"
-          placeholder="Upload an Image file to convert to braille"
+          placeholder="Upload an Image"
           onChange={(files: File) => loadFile(files)}
           accept="image/*"
           multiple={false}
@@ -78,7 +78,7 @@ const ImageConvertPage = () => {
             disabled={!imageData}
             onClick={handleExtract}
           >
-            Extract & Convert
+            Extract & Convert Image
           </Button>
         </Stack>
       </Stack>

@@ -35,7 +35,7 @@ const FileConvertPage = () => {
           accept="application/pdf"
           onChange={setFile}
           title="Upload File"
-          placeholder="Upload a PDF file to convert to braille"
+          placeholder="Upload a PDF file"
         />
         <Button
           disabled={!placeholder}
@@ -45,7 +45,7 @@ const FileConvertPage = () => {
           variant="outline"
           m="auto"
         >
-          Convert File
+          Extract & Convert File
         </Button>
       </Stack>
     </Stack>
