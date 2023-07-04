@@ -39,7 +39,9 @@ const FileConvertPage = () => {
         />
         <Button
           disabled={!placeholder}
-          onClick={() => setPdfText(placeholder)}
+          onClick={() => {
+            setPdfText(placeholder), setPlaceholder("");
+          }}
           variant="outline"
           m="auto"
         >

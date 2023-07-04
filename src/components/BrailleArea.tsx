@@ -39,14 +39,21 @@ const BrailleArea = ({ textInput }: Props) => {
       />
       <ScrollArea bg="#f8f9fa" h={250} p="xl">
         <Box pos="absolute" right={5} top={5}>
-          <CopyButton value={brailleText} timeout={2000}>
+          <CopyButton
+            value={displayMode === "Braille" ? brailleText : textInput}
+            timeout={2000}
+          >
             {({ copied, copy }) => (
               <Tooltip
                 label={copied ? "Copied" : "Copy"}
                 withArrow
                 position="right"
               >
-                <ActionIcon color={copied ? "teal" : "gray"} onClick={copy}>
+                <ActionIcon
+                  variant="transparent"
+                  color={copied ? "teal" : "gray"}
+                  onClick={copy}
+                >
                   {copied ? <CopyCheck size="1rem" /> : <Copy size="1rem" />}
                 </ActionIcon>
               </Tooltip>

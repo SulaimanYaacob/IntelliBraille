@@ -33,7 +33,7 @@ function LandingHeader() {
             data={[
               { value: "convert-text", label: "Convert Text" },
               { value: "convert-file", label: "Convert File" },
-              { value: "convert-img", label: "Convert Img" },
+              { value: "convert-img", label: "Convert Image" },
             ]}
             onChange={(value) => {
               push(`/${value}`);

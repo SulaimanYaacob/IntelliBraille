@@ -11,7 +11,7 @@ const TextConvertPage = () => {
       <BrailleArea textInput={text} />
       <Stack>
         <Textarea
-          autosize
+          maxRows={2}
           placeholder="Input text to convert to braille"
           onChange={(e) => setPlaceholder(e.currentTarget.value)}
         />
